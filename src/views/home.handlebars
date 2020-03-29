@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Example App - Home</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .inline-block {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body class="container">
+    <p class="">
+        <h1>Countries</h1>
+        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
+            content or
+            information.</p>
+
+    </p>
+
+    <div class="accordion  ">
+        {{#each countries}}
+        <div class="panel panel-primary">
+
+            <div class="panel-heading" id="headingOne2" data-toggle="collapse" data-target="#collapseOne{{@index}}"
+                aria-expanded="true" aria-controls="collapseOne{{@index}}">
+                <h3 class="panel-title "> {{Name}} <img height="50" width="30" class="rounded right" src="{{Flag}}"
+                        alt=""></h3>
+
+            </div>
+
+
+
+            <div id="collapseOne{{@index}}" class="collapse" aria-labelledby="headingOne2"
+                data-parent="#accordionExample275">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Native Name: {{NativeName}}</p>
+                            <p>Capital: {{Capital}}</p>
+                            <p>Region: {{Region}}</p>
+                            <p>Subregion: {{Subregion}}</p>
+                            <p>Population: {{population}}</p>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p>TopLevelDomain: {{TopLevelDomain}}</p>
+                            <p>Timezones: {{Timezones}}</p>
+                            <p>Demonym: {{Demonym}}</p>
+                            <p>Area: {{Area}}</p>
+
+
+                        </div>
+                        <div class="col-md-4">
+                            <p>Latlng: {{Latlng}}</p>
+                            <p>AltSpellings: {{AltSpellings}}</p>
+                            <p>Numeric Code: {{numericCode}}</p>
+                            <p>Alpha2Code: {{Alpha2Code}}</p>
+                            <p>Alpha3Code: {{Alpha3Code}}</p>
+                            <p>CallingCodes: {{CallingCodes}}</p>
+
+
+
+
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="panel panel-default ">
+                            <div class="panel-heading">Currency</div>
+                            <div class="panel-body">
+
+                                <div class="row">
+                                    {{#listCurrency}}
+                                    <div class="col-md-3">
+                                        <div class="list-group">
+                                            <a class="list-group-item">
+                                                <h4 class="list-group-item-heading">{{Name}}</h4>
+                                                <p class="list-group-item-text">
+                                                    Code:{{Code__c}}
+                                                    <br>
+                                                    Symbol:{{Symbol__c}}
+                                                </p>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    {{/listCurrency}}
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+
+                        <div class="panel panel-default ">
+                            <div class="panel-heading">Language</div>
+                            <div class="panel-body">
+
+                                <div class="row">
+                                    {{#listLanguage}}
+                                    <div class="col-md-3">
+                                        <div class="list-group">
+                                            <a class="list-group-item">
+                                                <h4 class="list-group-item-heading">{{Name}}</h4>
+                                                <p class="list-group-item-text">
+                                                    Native:{{Native_Name__c}}
+                                                    <br>
+                                                    Symbol:{{Iso639_2__c}}
+                                                </p>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    {{/listLanguage}}
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+        {{/each}}
+
+
+    </div>
+
+
+</body>
+
+<script>
+
+
+
+
+</script>
+
+</html>
